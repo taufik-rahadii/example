@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamera CCTV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, p {
+            text-align: center;
+        }
+        .product-image {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        .tagline {
+            font-style: italic;
+            color: #555;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+	  .container a {
+		text-align: center;
+		padding: 10px 25px;
+		background: #18f08f;
+		text-decoration: none;
+		color: #fff;
+	  }
+
+	  .button {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	  }
+        .video-container {
+            text-align: center;
+        }
+        .video-container video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+.price {
+ 	text-align: center;
+	width: 100%;
+margin: 40px 0;
+}
+#countdown {
+  font-size: 24px;
+  margin-bottom: 20px;
+	font-weight: bold;
+	color: red;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kamera CCTV</h1>
+	  
+        <div class="product-image">
+            <img src="https://api.kontenhub.com/media/product_image/a9kameraminig1.jpg" alt="Kamera CCTV">
+        </div>
+        <p>Kamera CCTV ini dilengkapi dengan fitur pelacakan gerakan, dapat terhubung melalui WiFi, dan mampu menyimpan rekaman video sebelumnya. Sangat cocok digunakan untuk keperluan dalam ruangan seperti rumah, garasi, kafe, atau kamar anak.</p>
+        <p class="tagline">Keamanan rumah Anda dalam genggaman.</p>
+
+	  <div class="video-container">
+            <video controls>
+                <source src="https://freaking-awesome.my.id/wp-content/uploads/2024/05/202405092223-1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+	  <p>Pesan Sekarang Untuk Mendapatkan Harga Diskon.</p>
+
+	  <div class="price">
+  	  <div id="countdown"></div>
+	  <h3>Rp. 399.999</p>
+	  <h2 style="color:red">Rp. 199.999</p>
+	  </div>
+
+	<p>Pembayaran COD, Barang Sampai Dirumah Baru Bayar</p>
+	  <div class="button">		
+	  <a href="https://api.whatsapp.com/send?phone=6287727535523&text=Halo%20kak%2C%20saya%20mau%20pesan%20Kamera%20CCTV%20nya%20dong%F0%9F%98%8A" target="_blank">Pesan Sekarang</a>
+	  </div>
+    </div>
+
+	<script>
+function getDateTwoDaysAfterTomorrow() {
+  const today = new Date();
+  const twoDaysAfterTomorrow = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2);
+  return twoDaysAfterTomorrow;
+}
+
+
+function getTimeRemaining(endTime) {
+  const total = Date.parse(endTime) - Date.parse(new Date());
+  const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((total / 1000 / 60) % 60);
+  const seconds = Math.floor((total / 1000) % 60);
+  return {
+    total,
+    hours,
+    minutes,
+    seconds
+  };
+}
+
+// Function to initialize and update the countdown
+function initializeClock(id, endtime) {
+  const clock = document.getElementById(id);
+
+  function updateClock() {
+    const t = getTimeRemaining(endtime);
+    clock.textContent = ('0' + t.hours).slice(-2) + ':' +
+                       ('0' + t.minutes).slice(-2) + ':' +
+                       ('0' + t.seconds).slice(-2);
+
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
+  }
+
+  updateClock();
+  const timeinterval = setInterval(updateClock, 1000);
+}
+
+// Set the target date for the countdown (two days after tomorrow)
+const targetDate = new Date();
+targetDate.setDate(targetDate.getDate() + 2);
+targetDate.setHours(0, 0, 0, 0);
+
+// Initialize the countdown
+initializeClock('countdown', targetDate);
+	</script>
+</body>
+</html>
